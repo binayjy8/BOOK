@@ -233,4 +233,4 @@ app.listen(port, ()=> {
     console.log("Server is listening to the port", port);
 });
 
-console.lo
+console.log
