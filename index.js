@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const cors = require("cors");
-const port = 3000;
+const PORT = process.env.PORT;
 const { initializeDatabase } = require("./db/db.connect");
 const Book = require("./models/book.model");
 
