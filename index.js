@@ -229,7 +229,7 @@ app.delete("/book/:bookId", async(req, res) => {
     }
 });
 
-app.listen(port, ()=> {
-    console.log("Server is listening to the port", port);
+app.listen(PORT, ()=> {
+    console.log("Server is listening to the port", PORT);
 });
 
