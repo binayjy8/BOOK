@@ -61,6 +61,28 @@ app.get("/api/books", async(req, res) => {
     }
 });
 
+async function getByName(bookName){
+    try {
+        const book = await Book.findOne({title: bookName});
+        return book;
+    } catch(error) {
+        throw error;
+    }
+}
+
+app.get("/booksname/:title", async(req, res) => {
+    try{
+        const book = await getByName(req.params.title);
+        if(book){
+            res.status(200).json({message: "Found successfully", book: book});
+        }else{
+            res.status(404).json({error: "Book name not exist"});
+        }
+    }catch(error){
+        res.status(500).json({message: "Server error getting"});
+    }
+});
+
 app.post("/books/:title", async(req, res) => {
     try{
         const book = await readBookByName(req.params.title);
