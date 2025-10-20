@@ -6,7 +6,12 @@ const PORT = process.env.PORT;
 const { initializeDatabase } = require("./db/db.connect");
 const Book = require("./models/book.model");
 
-app.use(cors());
+const corsOptions = {
+    origin: "*",
+    credentials: true
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 initializeDatabase();
