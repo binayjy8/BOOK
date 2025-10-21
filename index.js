@@ -243,7 +243,7 @@ async function deleteBookById(bookId){
     }
 }
 
-app.delete("/book/:bookId", async(req, res) => {
+app.delete("/books/:bookId", async(req, res) => {
     try{
         const book = await deleteBookById(req.params.bookId);
         if(book){
